@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My GCSE Timetable</title>
+<style>
+  body{font-family:system-ui,-apple-system,sans-serif;margin:0;background:#f5f6fa;color:#222}
+  header{padding:22px 18px 14px;background:white;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px #0001}
+  h1{margin:0 0 10px;font-size:24px}
+  .tabs{display:flex;gap:8px}.tab{border:0;padding:10px 18px;border-radius:20px;background:#e8e9ee;font-weight:700}.tab.active{background:#222;color:white}
+  main{max-width:800px;margin:auto;padding:14px}
+  .day{margin:14px 0}.day h2{font-size:18px;margin:12px 4px 8px}
+  details{background:white;border-radius:12px;margin:7px 0;padding:0 14px;box-shadow:0 1px 5px #0000000d}
+  summary{padding:13px 0;cursor:pointer;font-weight:650;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary:before{content:"＋ ";color:#777} details[open] summary:before{content:"− "}
+  .hw{border-left:4px solid #777}.rev{border-left:4px solid #777}.assess{border-left:4px solid #222}.gym{border-left:4px solid #aaa}
+  .football{background:#ececec}.free{background:#fafafa}
+  .content{padding:0 0 13px;color:#555;line-height:1.45}
+  .legend{font-size:13px;color:#666;margin:8px 0 0}
+  .week{display:none}
+.week-switcher{position:absolute;opacity:0;width:1px;height:1px;overflow:hidden}
+main:has(#week-a-control:checked) .week-a{display:block}
+main:has(#week-b-control:checked) .week-b{display:block}
+main:has(#week-a-control:checked) .header-a,
+main:has(#week-b-control:checked) .header-b{background:#222;color:white}
+.tabs .tab{display:inline-block;cursor:pointer}
+.tabs .tab:focus-visible{outline:3px solid #777;outline-offset:2px}
+  .note{background:#fff;border-radius:12px;padding:14px;margin:14px 0;line-height:1.45}
+</style>
+</head>
+<body>
+<header>
+<h1>📚 My GCSE Timetable</h1>
+<div class="tabs" role="tablist">
+<label class="tab header-a" for="week-a-control">Week A</label>
+<label class="tab header-b" for="week-b-control">Week B</label>
+</div>
+<div class="legend">Tap any block to see exactly what to do.</div>
+</header>
+<main>
+
+<div class="note">
+<b>Assessment rule:</b> 7 days out = identify content + retrieval · 5–6 days = fix gaps · 3–4 days = exam questions · 1–2 days = weak areas + timed practice · day before = short recall only. Assessment blocks replace normal revision; they don't get added on top.
+</div>
+
+<div class="week-switcher">
+<input type="radio" id="week-a-control" name="week-control" checked>
+<label class="tab" for="week-a-control">Week A</label>
+<input type="radio" id="week-b-control" name="week-control">
+<label class="tab" for="week-b-control">Week B</label>
+</div>
+<section id="a" class="week week-a">
+<div class="day"><h2>Monday</h2>
+<details class="rev"><summary>Statistics class · 3:30–5:00</summary><div class="content">Statistics lesson. Note anything unclear about sampling.</div></details>
+<details class="hw"><summary>Maths homework · 5:30–6:00</summary><div class="content">Complete the weekly Maths homework. Check and correct it.</div></details>
+<details class="rev"><summary>Maths revision · 6:00–6:30</summary><div class="content">Quadratics / completing the square: retrieve the method, then do exam-style questions and correct mistakes.</div></details>
+<details class="football"><summary>⚽ Football · 8:00–9:00</summary><div class="content">Fixed weekly football. Allow travel/preparation around it.</div></details>
+</div>
+<div class="day"><h2>Tuesday</h2>
+<details class="hw"><summary>Homework priority · 4:00–5:00</summary><div class="content">Do the most urgent weekly homework first: English Literature, Chemistry, History, DT or Further Maths.</div></details>
+<details class="hw"><summary>Latin homework — first 15 min · 5:00–5:15</summary><div class="content">Start the same Latin homework. Do 15 focused minutes only.</div></details>
+<details class="rev"><summary>Physics revision · 5:15–5:45</summary><div class="content">Radiation and linked topics: active recall → exam questions → correct mistakes.</div></details>
+<details class="rev"><summary>Spanish revision · 5:45–6:15</summary><div class="content">Module 1/2 vocabulary + grammar recall, ending with a short translation.</div></details>
+<details class="football"><summary>⚽ Football · 8:00–9:00</summary><div class="content">Fixed weekly football.</div></details>
+</div>
+<div class="day"><h2>Wednesday</h2>
+<details class="hw"><summary>English Language homework · 3:30–4:00</summary><div class="content">Complete the weekly task due today.</div></details>
+<details class="assess"><summary>Assessment / priority · 4:00–4:30</summary><div class="content">Use this for the nearest assessment: retrieval, gap fixing or exam questions depending on the countdown.</div></details>
+<details class="hw"><summary>Latin homework — final 15 min · 4:30–4:45</summary><div class="content">Finish the same Latin homework started Tuesday.</div></details>
+<details class="rev"><summary>English Literature revision · 4:45–5:15</summary><div class="content">Jekyll and Hyde: retrieve a theme/character, then write one analytical paragraph.</div></details>
+<details class="rev"><summary>Chemistry revision · 5:15–5:45</summary><div class="content">Reactions: recall key equations/patterns, then practise exam questions.</div></details>
+<details class="assess"><summary>Assessment / priority · 5:45–6:15</summary><div class="content">Flexible assessment preparation.</div></details>
+</div>
+<div class="day"><h2>Thursday</h2>
+<details class="hw"><summary>Spanish homework · 4:00–4:30</summary><div class="content">Complete the weekly Spanish homework due today.</div></details>
+<details class="rev"><summary>Biology revision · 4:30–5:00</summary><div class="content">Enzymes: retrieval practice + exam questions.</div></details>
+<details class="gym"><summary>🏋️ Gym · 5:00–7:00</summary><div class="content">Full 2-hour gym block including the walk to/from Woking Leisure Centre.</div></details>
+</div>
+<div class="day"><h2>Friday</h2>
+<details class="free"><summary>Home · 1:30</summary><div class="content">Lunch and reset.</div></details>
+<details class="hw"><summary>Physics homework · 2:15–2:45</summary><div class="content">Complete the weekly Physics homework due today.</div></details>
+<details class="hw"><summary>English Literature homework · 2:45–3:15</summary><div class="content">Complete the weekly English Literature homework.</div></details>
+<details class="hw"><summary>Further Maths homework · 3:15–3:45</summary><div class="content">Complete current taught-content questions / teacher question list.</div></details>
+<details class="hw"><summary>Chemistry / History / DT homework buffer · 3:45–4:15</summary><div class="content">Use for whichever weekly task is most urgent.</div></details>
+<details class="assess"><summary>Assessment / priority · 4:15–5:00</summary><div class="content">Nearest assessment only.</div></details>
+<details class="rev"><summary>History revision · 5:00–5:30</summary><div class="content">Civil Rights: closed-book recall + one exam question/plan.</div></details>
+<details class="gym"><summary>🏋️ Gym / free · 5:30–7:30</summary><div class="content">Full 2-hour gym option including walking, or keep this flexible for friends/plans.</div></details>
+</div>
+<div class="day"><h2>Saturday</h2>
+<details class="football"><summary>⚽ Match / flexible · morning–afternoon</summary><div class="content">Match timing varies. Keep the day adaptable.</div></details>
+<details class="rev"><summary>DT revision · after match</summary><div class="content">Product analysis/design skills: retrieve key ideas, then practise a question.</div></details>
+<details class="rev"><summary>Further Maths revision · after match</summary><div class="content">Unfamiliar practice from current taught content. Mark and redo errors.</div></details>
+<details class="assess"><summary>Assessment flex · 30 min</summary><div class="content">Redirect to the nearest assessment.</div></details>
+</div>
+<div class="day"><h2>Sunday</h2>
+<details class="football"><summary>⚽ Match / flexible · morning–afternoon</summary><div class="content">Fit revision around the match.</div></details>
+<details class="rev"><summary>Statistics revision · 30 min</summary><div class="content">Sampling: learn missed content, then practise questions.</div></details>
+<details class="rev"><summary>French revision · 30 min</summary><div class="content">Writing + grammar + general refresh.</div></details>
+<details class="assess"><summary>Assessment flex · 30 min</summary><div class="content">Use for the nearest test/tri-weekly.</div></details>
+</div>
+</section>
+
+<section id="b" class="week week-b">
+<div class="day"><h2>Monday</h2>
+<details class="rev"><summary>Statistics class · 3:30–5:00</summary><div class="content">Statistics lesson. Focus on sampling and anything unclear.</div></details>
+<details class="hw"><summary>Maths homework · 5:30–6:00</summary><div class="content">Complete, check and correct the weekly Maths homework.</div></details>
+<details class="rev"><summary>Biology revision · 6:00–6:30</summary><div class="content">Enzymes: retrieval + exam questions.</div></details>
+<details class="football"><summary>⚽ Football · 8:00–9:00</summary><div class="content">Fixed weekly football.</div></details>
+</div>
+<div class="day"><h2>Tuesday</h2>
+<details class="hw"><summary>English Literature homework · 4:00–4:30</summary><div class="content">Complete the weekly task.</div></details>
+<details class="hw"><summary>Latin homework — first 15 min · 4:30–4:45</summary><div class="content">Start the same Latin homework; 15 focused minutes.</div></details>
+<details class="rev"><summary>Latin revision · 4:45–5:15</summary><div class="content">Participles / perfect passive questions: active recall + translation practice.</div></details>
+<details class="assess"><summary>Assessment / priority · 5:15–5:45</summary><div class="content">Nearest assessment and weakest area.</div></details>
+<details class="rev"><summary>History revision · 5:45–6:15</summary><div class="content">Civil Rights: retrieve key events/people and answer one exam question.</div></details>
+<details class="football"><summary>⚽ Football · 8:00–9:00</summary><div class="content">Fixed weekly football.</div></details>
+</div>
+<div class="day"><h2>Wednesday</h2>
+<details class="hw"><summary>English Language homework · 3:30–4:00</summary><div class="content">Complete the weekly task due today.</div></details>
+<details class="assess"><summary>Assessment / priority · 4:00–4:30</summary><div class="content">Nearest assessment: active recall + questions.</div></details>
+<details class="rev"><summary>French tutoring · 4:30–6:00</summary><div class="content">Fixed French tutoring. Focus on writing, grammar and general refresh.</div></details>
+<details class="gym"><summary>🏋️ Gym · 6:00–8:00</summary><div class="content">Full 2-hour gym block AFTER French, including the walk to/from Woking Leisure Centre.</div></details>
+<details class="free"><summary>Dinner · 8:00–8:30</summary><div class="content">Dinner after gym.</div></details>
+<details class="hw"><summary>Latin homework — final 15 min · 8:30–8:45</summary><div class="content">Finish the same Latin homework started Tuesday.</div></details>
+<details class="free"><summary>Wind down · 8:45–9:30</summary><div class="content">Free time / get ready for bed.</div></details>
+</div>
+<div class="day"><h2>Thursday</h2>
+<details class="hw"><summary>Spanish homework · 4:00–4:30</summary><div class="content">Complete the weekly Spanish homework due today.</div></details>
+<details class="rev"><summary>Spanish revision · 4:30–5:00</summary><div class="content">Module 1/2 vocabulary + grammar + short translation.</div></details>
+<details class="rev"><summary>Physics revision · 5:00–5:30</summary><div class="content">Radiation and linked topics: active recall + exam questions.</div></details>
+<details class="gym"><summary>🏋️ Gym / free · 5:30–7:30</summary><div class="content">Full 2-hour gym option including walking. Use this if you want another gym session; otherwise keep it free.</div></details>
+</div>
+<div class="day"><h2>Friday</h2>
+<details class="free"><summary>Home · 1:30</summary><div class="content">Lunch and reset.</div></details>
+<details class="hw"><summary>Physics homework · 2:15–2:45</summary><div class="content">Complete the weekly Physics homework due today.</div></details>
+<details class="hw"><summary>Further Maths homework · 2:45–3:15</summary><div class="content">Complete current taught-content questions / teacher question list.</div></details>
+<details class="hw"><summary>DT / History / Chemistry homework buffer · 3:15–3:45</summary><div class="content">Use for whichever weekly task is most urgent.</div></details>
+<details class="assess"><summary>Assessment / priority · 3:45–4:30</summary><div class="content">Nearest assessment only.</div></details>
+<details class="rev"><summary>Chemistry revision · 4:30–5:00</summary><div class="content">Reactions: recall + exam questions.</div></details>
+<details class="gym"><summary>🏋️ Gym · 5:15–7:15</summary><div class="content">Full 2-hour gym block including walking.</div></details>
+</div>
+<div class="day"><h2>Saturday</h2>
+<details class="football"><summary>⚽ Match / flexible</summary><div class="content">Fit everything around the match.</div></details>
+<details class="rev"><summary>English Literature revision · after match</summary><div class="content">Jekyll and Hyde: character/theme retrieval + one analytical paragraph.</div></details>
+<details class="rev"><summary>Statistics revision · 30 min</summary><div class="content">Sampling practice and correction of mistakes.</div></details>
+<details class="assess"><summary>Assessment flex · 30 min</summary><div class="content">Redirect to the nearest test.</div></details>
+</div>
+<div class="day"><h2>Sunday</h2>
+<details class="football"><summary>⚽ Match / flexible</summary><div class="content">Keep the day adaptable.</div></details>
+<details class="rev"><summary>French revision · 30 min</summary><div class="content">Writing + grammar + general refresh from tutoring.</div></details>
+<details class="hw"><summary>DT / History / Chemistry homework buffer · 30 min</summary><div class="content">Use for whichever weekly assignment remains.</div></details>
+<details class="rev"><summary>History revision · 30 min</summary><div class="content">Closed-book recall → causes/consequences/significance → exam question or plan.</div></details>
+<details class="assess"><summary>Assessment flex · 30 min</summary><div class="content">Nearest assessment.</div></details>
+</div>
+</section>
+
+<div class="note">
+<b>Quick rule:</b> retrieval → check → apply → correct. Don't spend most of the session just rereading notes. On a very busy day, do homework + one 20–25 minute priority block and stop.
+</div>
+</main>
+
+</body>
+</html>
